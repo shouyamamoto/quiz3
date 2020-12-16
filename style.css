@@ -7,6 +7,7 @@ body {
 }
 
 #quiz {
+  position: relative;
   width: 400px;
   background-color: #fff;
   border-radius: 4px;
@@ -36,7 +37,29 @@ body {
   cursor: pointer;
 }
 
-#btn {
+#choices > li.correct {
+  background-color: #da5040;
+  border-color: #da5040;
+  color: #fff;
+}
+#choices > li.correct::after {
+  content: ' ... correct!';
+  color: #fff;
+}
+
+
+#choices > li.wrong {
+  background-color: olivedrab;
+  border-color: olivedrab;
+  color: black;
+}
+#choices > li.wrong::after {
+  content: ' ... wrong!';
+  color: black;
+}
+
+#btn,
+#score > a {
   text-align: center;
   background-color: olive;
   box-shadow: 0 4px 0 #333;
@@ -53,4 +76,30 @@ body {
 #btn.disabled {
   background-color: #999;
   opacity: 0.7;
+}
+
+#score {
+  position: absolute;
+  width: 240px;
+  top: 50px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: gold;
+  text-align: center;
+  padding: 40px 10px;
+  border-radius: 4px;
+}
+
+#score.hidden {
+  top: -500px;
+}
+
+#score > p {
+  font-size: 24px;
+}
+
+#score > a {
+  display: block;
+  text-decoration: none;
 }
